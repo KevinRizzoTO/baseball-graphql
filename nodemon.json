@@ -1,5 +1,5 @@
 {
   "events": {
-    "start": "flow"
+    "start": "npm run flow"
   }
 }
