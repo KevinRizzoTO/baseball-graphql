@@ -8,7 +8,8 @@
     "flow": "flow",
     "flow:build-gql": "babel-node ./scripts/buildFlowTypesFromGraphQlSchema.js",
     "flow:coverage":
-      "flow-coverage-report -i 'src/**/*.js' -t html -t json -t text --threshold 95"
+      "flow-coverage-report -i 'src/**/*.js' -t html -t json -t text --threshold 95",
+    "test": "npm run flow:coverage"
   },
   "keywords": [],
   "author": "",
