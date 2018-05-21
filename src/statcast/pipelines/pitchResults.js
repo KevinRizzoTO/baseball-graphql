@@ -1,5 +1,6 @@
-const constants = require("../../constants");
-const { getArrayMappingFunction } = require("../utils");
+/*@flow*/
+import * as constants from "../../constants";
+import { getArrayMappingFunction } from "../utils";
 
 const statcastKey = "hfPR";
 
@@ -31,8 +32,4 @@ const mapping = {
     "swinging\\.\\.strike\\.\\.blocked"
 };
 
-module.exports = getArrayMappingFunction(
-  internalFilterKey,
-  statcastKey,
-  mapping
-);
+export default getArrayMappingFunction(internalFilterKey, statcastKey, mapping);

@@ -1,5 +1,6 @@
-const { teamsList, leaguesList, positionList } = require("./schemaLists");
-const constants = require("./constants");
+/*@flow*/
+import { teamsList, leaguesList, positionList } from "./schemaLists";
+import * as constants from "./constants";
 
 const typeDefs = `
   scalar Date
@@ -272,7 +273,7 @@ const typeDefs = `
 
   input MetricRange {
     # Type of metric to filter based on
-    metric: StatcastMetricRangeTypes,
+    metric: StatcastMetricRangeTypes!,
     # Filter events where metric range is greater than this amount,
     greaterThan: Int,
     # Filter events where metric range is less than this amount,
@@ -313,8 +314,8 @@ const typeDefs = `
   }
 
   type Query {
-    statcast(filter: StatCastFilter): [Player]
+    statcast(filter: StatCastFilter!): [Player]
   }
 `;
 
-module.exports = typeDefs;
+export default typeDefs;

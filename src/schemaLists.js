@@ -1,6 +1,7 @@
-const constants = require("./constants");
+/*@flow*/
+import * as constants from "./constants";
 
-module.exports.teamsList = `
+export const teamsList = `
   # Los Angeles Angels
   ${constants.LOS_ANGELES_ANGELS}
   # Houston Astros
@@ -63,14 +64,14 @@ module.exports.teamsList = `
   ${constants.NEW_YORK_YANKEES}
 `;
 
-module.exports.leaguesList = `
+export const leaguesList = `
   # American League
   ${constants.AMERICAN_LEAGUE}
   # National League
   ${constants.NATIONAL_LEAGUE}
 `;
 
-module.exports.positionList = `
+export const positionList = `
   # Pitcher
   ${constants.POSITION_PITCHER}
   # Catcher

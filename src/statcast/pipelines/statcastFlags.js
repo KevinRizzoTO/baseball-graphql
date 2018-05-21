@@ -1,5 +1,6 @@
-const constants = require("../../constants");
-const { getArrayMappingFunction } = require("../utils");
+/*@flow*/
+import * as constants from "../../constants";
+import { getArrayMappingFunction } from "../utils";
 
 const statcastKey = "hfFlag";
 const internalFilterKey = constants.STATCAST_FLAGS;
@@ -13,8 +14,4 @@ const mapping = {
   [constants.IS_HARD_HIT]: "is\\.\\.hit\\.\\.into\\.\\.play\\.\\.hardhit"
 };
 
-module.exports = getArrayMappingFunction(
-  internalFilterKey,
-  statcastKey,
-  mapping
-);
+export default getArrayMappingFunction(internalFilterKey, statcastKey, mapping);

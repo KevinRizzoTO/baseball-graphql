@@ -1,4 +1,7 @@
-const constants = require("../../constants");
+/*@flow*/
+import * as constants from "../../constants";
+import type { StatCastFilter } from "../../schemaTypes.flow";
+import type { StatCastSearch } from "../types.flow";
 
 const filterKey = "player_type";
 
@@ -15,7 +18,7 @@ const mapping = {
   [constants.POSITION_RIGHT_FIELD]: "pos9_person_id"
 };
 
-module.exports = (request, data) => {
+export default (request: StatCastFilter, data: StatCastSearch) => {
   const requestValue = request[constants.PLAYER_TYPE];
 
   if (requestValue) {

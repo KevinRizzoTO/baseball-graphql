@@ -1,4 +1,7 @@
-const constants = require("../../constants");
+/*@flow*/
+import * as constants from "../../constants";
+import type { StatCastFilter } from "../../schemaTypes.flow";
+import type { StatCastSearch } from "../types.flow";
 
 const filterKey = "pitcher_throws";
 
@@ -7,7 +10,7 @@ const mapping = {
   [constants.PITCHER_HANDEDNESS_RIGHT]: "R"
 };
 
-module.exports = (request, data) => {
+export default (request: StatCastFilter, data: StatCastSearch) => {
   const requestValue = request[constants.PITCHER_HANDEDNESS];
 
   if (requestValue) {

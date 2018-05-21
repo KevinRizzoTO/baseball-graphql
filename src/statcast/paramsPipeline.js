@@ -1,8 +1,9 @@
-const requireDir = require("require-dir");
+/*@flow*/
+import type { StatCastFilter } from "../schemaTypes.flow";
+import type { StatCastSearch } from "./types.flow";
+import pipeline from "./pipelines";
 
-const pipeline = Object.values(requireDir("./pipelines"));
-
-module.exports = request => {
+export default (request: StatCastFilter): StatCastSearch => {
   const queryParamsObject = pipeline.reduce((acc, fn) => {
     return fn(request, acc);
   }, {});

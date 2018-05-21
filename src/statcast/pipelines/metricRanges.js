@@ -1,4 +1,7 @@
-const constants = require("../../constants");
+/*@flow*/
+import * as constants from "../../constants";
+import type { StatCastFilter } from "../../schemaTypes.flow";
+import type { StatCastSearch } from "../types.flow";
 
 const filterKeyPrefix = "metric";
 
@@ -51,7 +54,7 @@ const mapping = {
     "n_priorpa_thisgame_player_at_bat"
 };
 
-module.exports = (request, data) => {
+export default (request: StatCastFilter, data: StatCastSearch) => {
   const requestArray = request[internalFilterKey];
 
   if (requestArray) {

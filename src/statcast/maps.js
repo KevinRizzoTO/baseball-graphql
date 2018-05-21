@@ -1,6 +1,7 @@
-const constants = require("../constants");
+/*@flow*/
+import * as constants from "../constants";
 
-module.exports.teamMapping = {
+export const teamMapping = {
   [constants.LOS_ANGELES_ANGELS]: "LAA",
   [constants.HOUSTON_ASTROS]: "HOU",
   [constants.OAKLAND_ATHLETICS]: "OAK",
@@ -33,7 +34,7 @@ module.exports.teamMapping = {
   [constants.NEW_YORK_YANKEES]: "NYY"
 };
 
-module.exports.leagueMapping = {
+export const leagueMapping = {
   [constants.AMERICAN_LEAGUE]: "AL",
   [constants.NATIONAL_LEAGUE]: "NL"
 };

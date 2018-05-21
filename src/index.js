@@ -1,7 +1,7 @@
-const typeDefs = require("./typeDefs");
-const resolvers = require("./resolvers");
+/*@flow*/
+import { GraphQLServer } from "graphql-yoga";
+import typeDefs from "./typeDefs";
+import resolvers from "./resolvers";
 
-module.exports = {
-  typeDefs,
-  resolvers
-};
+const server = new GraphQLServer({ typeDefs, resolvers });
+server.start(() => console.log("Server is running on localhost:4000"));

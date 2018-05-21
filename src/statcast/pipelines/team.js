@@ -1,5 +1,8 @@
-const constants = require("../../constants");
-const { teamMapping, leagueMapping } = require("../maps");
+/*@flow*/
+import * as constants from "../../constants";
+import { teamMapping, leagueMapping } from "../maps";
+import type { StatCastFilter } from "../../schemaTypes.flow";
+import type { StatCastSearch } from "../types.flow";
 
 const statcastKey = "team";
 
@@ -10,7 +13,7 @@ const mapping = {
   ...leagueMapping
 };
 
-module.exports = (request, data) => {
+export default (request: StatCastFilter, data: StatCastSearch) => {
   const requestValue = request[internalFilterKey];
 
   if (requestValue) {

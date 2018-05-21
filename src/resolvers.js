@@ -1,8 +1,14 @@
-const statcastResolver = require("./statcast/resolver");
+/*@flow*/
+import type { statcast_On_QueryArguments, Player } from "./schemaTypes.flow.js";
 
-module.exports = {
+import statcastResolver from "./statcast/resolver";
+
+export default {
   Query: {
-    statcast: async (root, args) => {
+    statcast: async (
+      root: any,
+      args: statcast_On_QueryArguments
+    ): Promise<Array<Player>> => {
       const results = await statcastResolver(args);
       return results;
     }

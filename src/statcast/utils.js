@@ -1,15 +1,17 @@
-const parseArrayForQueryParams = arr => {
+/*@flow*/
+import type { StatCastFilter } from "../schemaTypes.flow";
+import type { StatCastSearch } from "./types.flow";
+
+export const parseArrayForQueryParams = (arr: Array<String>) => {
   return `${arr.join("|")}|`;
 };
 
-module.exports.parseArrayForQueryParams = parseArrayForQueryParams;
-
-module.exports.getArrayMappingFunction = (
-  internalFilterKey,
-  statcastKey,
-  mapping
+export const getArrayMappingFunction = (
+  internalFilterKey: string,
+  statcastKey: string,
+  mapping: any
 ) => {
-  return (request, data) => {
+  return (request: StatCastFilter, data: StatCastSearch) => {
     const requestArray = request[internalFilterKey];
 
     if (requestArray) {
