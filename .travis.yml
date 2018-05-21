@@ -1,3 +1,9 @@
 language: node_js
 node_js:
   - "stable"
+
+deploy:
+  provider: script
+  script: NOW_ALIAS=baseball-graphql.com NOW_TOKEN=$NOW_TOKEN GH_TOKEN=$GH_TOKEN node_modules/.bin/now-travis
+  on:
+    branch: master
