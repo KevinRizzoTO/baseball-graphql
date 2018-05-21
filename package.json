@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon ./src/index.js --exec babel-node --watch ./src",
+    "start": "node dist/index.js",
+    "build": "npm run clean && babel src -d dist --ignore '**/*.test.js --source-maps'",
     "flow": "flow",
     "flow:build-gql": "babel-node ./scripts/buildFlowTypesFromGraphQlSchema.js",
-    "flow:coverage":
-      "flow-coverage-report -i 'src/**/*.js' -t html -t json -t text --threshold 95",
-    "test": "npm run flow:coverage"
+    "flow:coverage": "flow-coverage-report -i 'src/**/*.js' -t html -t json -t text --threshold 95",
+    "test": "npm run flow:coverage",
+    "clean": "rimraf dist"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +19,8 @@
   "dependencies": {
     "get-csv": "^3.0.3",
     "graphql-yoga": "^1.13.1",
-    "query-string": "^6.1.0"
+    "query-string": "^6.1.0",
+    "rimraf": "^2.6.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.47",
@@ -35,6 +38,7 @@
     "flow-coverage-report": "^0.5.0",
     "flow-remove-types": "^1.2.3",
     "gql2ts": "^1.8.0",
-    "nodemon": "^1.17.4"
+    "nodemon": "^1.17.4",
+    "now-travis": "^1.2.0"
   }
 }

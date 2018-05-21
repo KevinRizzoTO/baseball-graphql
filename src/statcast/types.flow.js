@@ -1,7 +1,7 @@
-export type StatCastSearch {
+export type StatCastSearch = {
   [name: string]: string
-}
+};
 
-export type StatCastMapping {
+export type StatCastMapping = {
   [name: string]: string
-}
+};
