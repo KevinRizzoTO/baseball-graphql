@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 set -e
 
@@ -25,7 +25,7 @@ now remove --yes --safe --token $NOW_TOKEN $PROJECT
 
 # 4. Scale to 1
 echo "Scaling to 1 instance..."
-now scale $ALIAS 1 --token $NOW_TOKEN
+now scale $ALIAS sfo 1 --token $NOW_TOKEN
 
 # 5. Log results
 echo "Deployment successful!"
