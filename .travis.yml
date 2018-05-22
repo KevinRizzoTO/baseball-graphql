@@ -4,6 +4,7 @@ node_js:
 
 deploy:
   provider: script
-  script: NOW_ALIAS=baseball-graphql.com NOW_TOKEN=$NOW_TOKEN GH_TOKEN=$GH_TOKEN node_modules/.bin/now-travis
+  script: sh $TRAVIS_BUILD_DIR/scripts/deploy.sh
+  skip_cleanup: true
   on:
     branch: master

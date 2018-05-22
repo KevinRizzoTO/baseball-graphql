@@ -31,6 +31,7 @@
     "@babel/preset-env": "^7.0.0-beta.47",
     "@babel/preset-flow": "^7.0.0-beta.47",
     "@gql2ts/language-flow": "^1.8.0",
+    "await-url": "^0.3.0",
     "babel-loader": "^8.0.0-beta.3",
     "babel-preset-env": "^1.7.0",
     "copy-paste": "^1.3.0",
@@ -39,6 +40,6 @@
     "flow-remove-types": "^1.2.3",
     "gql2ts": "^1.8.0",
     "nodemon": "^1.17.4",
-    "now-travis": "^1.2.0"
+    "now": "^11.1.12"
   }
 }
