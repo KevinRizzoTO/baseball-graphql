@@ -8,7 +8,7 @@ export PATH="./node_modules/.bin:$PATH"
 
 # 1. Wair for deployment ready
 echo "Deploying to now..."
-URL=$(now --token=$NOW_TOKEN --public)
+URL=$(now --token=$NOW_TOKEN --public -f)
 
 echo "Waiting for URL to be public..."
 await-url $URL
