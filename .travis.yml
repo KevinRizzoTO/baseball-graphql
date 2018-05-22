@@ -4,6 +4,6 @@ node_js:
 
 deploy:
   provider: script
-  script: bash scripts/deploy.sh
+  script: chmod +x scripts/deploy.sh && scripts/deploy.sh
   on:
     all_branches: true
