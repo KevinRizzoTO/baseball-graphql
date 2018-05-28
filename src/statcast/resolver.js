@@ -6,7 +6,7 @@ import type {
   StatCastFilter,
   Player
 } from "../schemaTypes.flow";
-import type { StatcastCsvExport } from "./types.flow";
+import type { StatcastCsvExport, CsvHeadings } from "./types.flow";
 
 import { csvHeaderMapping } from "./maps";
 import paramsPipeline from "./paramsPipeline";
@@ -23,9 +23,9 @@ const getQueryParams = filter => {
   });
 };
 
-const deserializeCsvResponse = (statcastObj): Player => {
-  return Object.keys(statcastObj).reduce((acc, curr) => {
-    const value = statcastObj[curr];
+const deserializeCsvResponse = (statcastObj: StatcastCsvExport) => {
+  return Object.keys(statcastObj).reduce((acc, curr: CsvHeadings) => {
+    const value: String = statcastObj[curr];
 
     const newKey = Object.keys(csvHeaderMapping).find(key => {
       return csvHeaderMapping[key] === curr;
@@ -36,7 +36,7 @@ const deserializeCsvResponse = (statcastObj): Player => {
     }
 
     return acc;
-  }, ({}: StatcastCsvExport));
+  }, {});
 };
 
 export default async ({
@@ -46,7 +46,7 @@ export default async ({
 
   console.log(params);
 
-  const data = await getCsv(
+  const data: StatcastCsvExport = await getCsv(
     `https://baseballsavant.mlb.com/statcast_search/csv?${params}`
   );
 

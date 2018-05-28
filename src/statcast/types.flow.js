@@ -39,3 +39,5 @@ export type StatcastCsvExport = {
   pos8_int_start_distance: string,
   pos9_int_start_distance: string
 };
+
+export type CsvHeadings = $Keys<StatcastCsvExport>;
