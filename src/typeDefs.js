@@ -6,8 +6,28 @@ const typeDefs = `
   scalar Date
 
   type Player {
-    player_name: String,
-    pitches: Int
+    ${constants.STATCAST_CSV_PLAYER_NAME}: String,
+    ${constants.STATCAST_CSV_PITCHES}: String,
+    ${constants.STATCAST_CSV_PLAYER_ID}: String,
+    ${constants.STATCAST_CSV_TOTAL_PITCHES}: String,
+    ${constants.STATCAST_CSV_PITCH_PERCENTAGE}: String,
+    ${constants.BATTING_AVERAGE}: String,
+    ${constants.ISOLATED_POWER}: String,
+    ${constants.BATTING_AVERAGE_ON_BALLS_IN_PLAY}: String,
+    ${constants.SLUGGING}: String,
+    ${constants.WEIGHTED_ON_BASE_AVERAGE}: String,
+    ${constants.EXPECTED_WEIGHTED_ON_BASE_AVERAGE}: String,
+    ${constants.EXPECTED_BATTING_AVERAGE}: String,
+    ${constants.HITS}: String,
+    ${constants.AT_BATS}: String,
+    ${constants.LAUNCH_ANGLE}: String,
+    ${constants.LAUNCH_SPEED}: String,
+    ${constants.SPIN_RATE}: String,
+    ${constants.VELOCITY}: String,
+    ${constants.EFFECTIVE_SPEED}: String,
+    ${constants.STATCAST_CSV_WHIFFS}: String,
+    ${constants.STATCAST_CSV_SWINGS}: String,
+    ${constants.STATCAST_CSV_TAKES}: String
   }
 
   enum PitchType {

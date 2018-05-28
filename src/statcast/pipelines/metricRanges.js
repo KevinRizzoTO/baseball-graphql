@@ -61,8 +61,10 @@ export default (request: StatCastFilter, data: StatCastSearch) => {
     requestArray.forEach((item, index) => {
       const metricName = `${filterKeyPrefix}_${index + 1}`;
       data[metricName] = mapping[item.metric];
-      data[`${metricName}_gt`] = item.greaterThan;
-      data[`${metricName}_lt`] = item.lessThan;
+      data[`${metricName}_gt`] = item.greaterThan
+        ? item.greaterThan.toString()
+        : "";
+      data[`${metricName}_lt`] = item.lessThan ? item.lessThan.toString() : "";
     });
   }
 
