@@ -2,19 +2,19 @@
 import * as constants from "../constants";
 import { teamMapping, leagueMapping } from "../maps";
 import type { StatCastFilter } from "../../schemaTypes.flow";
-import type { StatCastSearch } from "../types.flow";
+import type { StatCastSearch, StatCastMapping } from "../types.flow";
 
 const statcastKey = "stadium";
 
-const internalFilterKey = constants.VENUE_FILTER;
+const internalFilterKey: string = constants.VENUE_FILTER;
 
-const mapping = {
+const mapping: StatCastMapping = {
   ...teamMapping,
   ...leagueMapping
 };
 
 export default (request: StatCastFilter, data: StatCastSearch) => {
-  const requestValue = request[internalFilterKey];
+  const requestValue: string | null = request[internalFilterKey];
 
   if (requestValue) {
     data[statcastKey] = mapping[requestValue];

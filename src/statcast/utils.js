@@ -9,12 +9,12 @@ export const parseArrayForQueryParams = (arr: Array<String>) => {
 export const getArrayMappingFunction = (
   internalFilterKey: string,
   statcastKey: string,
-  mapping: StatCastMapping
+  mapping: StatCastMapping | typeof undefined
 ) => {
   return (request: StatCastFilter, data: StatCastSearch) => {
     const requestArray = request[internalFilterKey];
 
-    if (requestArray) {
+    if (requestArray && data) {
       const parsedArray = requestArray.map(value => {
         return mapping ? mapping[value] : value;
       });

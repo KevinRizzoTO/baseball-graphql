@@ -1,3 +1,4 @@
+/*@flow*/
 export type StatCastSearch = {
   [name: string]: string
 };
