@@ -3,9 +3,12 @@ import getCsv from "get-csv";
 import queryParams from "query-string";
 import type {
   statcast_On_QueryArguments,
-  StatCastFilter
+  StatCastFilter,
+  Player
 } from "../schemaTypes.flow";
+import type { StatcastCsvExport } from "./types.flow";
 
+import { csvHeaderMapping } from "./maps";
 import paramsPipeline from "./paramsPipeline";
 
 const defaultQueryParams =
@@ -20,10 +23,32 @@ const getQueryParams = filter => {
   });
 };
 
-export default ({ filter }: statcast_On_QueryArguments) => {
+const deserializeCsvResponse = (statcastObj): Player => {
+  return Object.keys(statcastObj).reduce((acc, curr) => {
+    const value = statcastObj[curr];
+
+    const newKey = Object.keys(csvHeaderMapping).find(key => {
+      return csvHeaderMapping[key] === curr;
+    });
+
+    if (newKey && value) {
+      acc[newKey] = value;
+    }
+
+    return acc;
+  }, ({}: StatcastCsvExport));
+};
+
+export default async ({
+  filter
+}: statcast_On_QueryArguments): Promise<Player> => {
   const params = getQueryParams(filter);
 
   console.log(params);
 
-  return getCsv(`https://baseballsavant.mlb.com/statcast_search/csv?${params}`);
+  const data = await getCsv(
+    `https://baseballsavant.mlb.com/statcast_search/csv?${params}`
+  );
+
+  return data.map(deserializeCsvResponse);
 };

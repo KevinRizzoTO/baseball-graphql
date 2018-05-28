@@ -192,3 +192,29 @@ export const STATCAST_METRIC_PITCHER_TIMES_THROUGH_ORDER =
   "pitcherTimesThroughOrder";
 export const STATCAST_METRIC_BATTER_TIMES_THROUGH_ORDER =
   "batterTimesThroughOrder";
+
+//CSV MAPPING
+export const STATCAST_CSV_PITCHES = "numberOfPitches";
+export const STATCAST_CSV_PLAYER_ID = "playerId";
+export const STATCAST_CSV_PLAYER_NAME = "playerName";
+export const STATCAST_CSV_TOTAL_PITCHES = "totalPitches";
+export const STATCAST_CSV_PITCH_PERCENTAGE = "pitchPercentage";
+export const STATCAST_CSV_WHIFFS = "whiffs";
+export const STATCAST_CSV_SWINGS = "swings";
+export const STATCAST_CSV_TAKES = "takes";
+
+// STATS
+export const BATTING_AVERAGE = "BA";
+export const ISOLATED_POWER = "ISO";
+export const BATTING_AVERAGE_ON_BALLS_IN_PLAY = "BABIP";
+export const SLUGGING = "SLG";
+export const WEIGHTED_ON_BASE_AVERAGE = "WOBA";
+export const EXPECTED_WEIGHTED_ON_BASE_AVERAGE = "xWOBA";
+export const EXPECTED_BATTING_AVERAGE = "xBA";
+export const HITS = "hits";
+export const AT_BATS = "ABs";
+export const LAUNCH_SPEED = "launchSpeed";
+export const LAUNCH_ANGLE = "launchAngle";
+export const SPIN_RATE = "spinRate";
+export const VELOCITY = "velocity";
+export const EFFECTIVE_SPEED = "effectiveSpeed";

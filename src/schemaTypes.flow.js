@@ -294,6 +294,25 @@ type StatcastMetricRangeTypes =
   | "batterTimesThroughOrder";
 
 export type Player = {
-  player_name: string | null,
-  pitches: number | null
+  playerName: string | null,
+  numberOfPitches: number | null,
+  playerId: number | null,
+  totalPitches: number | null,
+  pitchPercentage: number | null,
+  BA: number | null,
+  ISO: number | null,
+  BABIP: number | null,
+  SLG: number | null,
+  WOBA: number | null,
+  xWOBA: number | null,
+  xBA: number | null,
+  hits: number | null,
+  ABs: number | null,
+  launchAngle: number | null,
+  launchSpeed: number | null,
+  spinRate: number | null,
+  velocity: number | null,
+  whiffs: number | null,
+  swings: number | null,
+  takes: number | null
 };

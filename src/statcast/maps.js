@@ -38,3 +38,28 @@ export const leagueMapping = {
   [constants.AMERICAN_LEAGUE]: "AL",
   [constants.NATIONAL_LEAGUE]: "NL"
 };
+
+export const csvHeaderMapping = {
+  [constants.STATCAST_CSV_PLAYER_NAME]: "player_name",
+  [constants.STATCAST_CSV_PITCHES]: "pitches",
+  [constants.STATCAST_CSV_PLAYER_ID]: "player_id",
+  [constants.STATCAST_CSV_TOTAL_PITCHES]: "total_pitches",
+  [constants.STATCAST_CSV_PITCH_PERCENTAGE]: "pitch_percent",
+  [constants.BATTING_AVERAGE]: "ba",
+  [constants.ISOLATED_POWER]: "iso",
+  [constants.BATTING_AVERAGE_ON_BALLS_IN_PLAY]: "babip",
+  [constants.SLUGGING]: "slg",
+  [constants.WEIGHTED_ON_BASE_AVERAGE]: "woba",
+  [constants.EXPECTED_WEIGHTED_ON_BASE_AVERAGE]: "xwoba",
+  [constants.EXPECTED_BATTING_AVERAGE]: "xba",
+  [constants.HITS]: "hits",
+  [constants.AT_BATS]: "abs",
+  [constants.LAUNCH_SPEED]: "launch_speed",
+  [constants.LAUNCH_ANGLE]: "launch_angle",
+  [constants.SPIN_RATE]: "spin_rate",
+  [constants.VELOCITY]: "velocity",
+  [constants.EFFECTIVE_SPEED]: "effective_speed",
+  [constants.STATCAST_CSV_WHIFFS]: "whiffs",
+  [constants.STATCAST_CSV_SWINGS]: "swings",
+  [constants.STATCAST_CSV_TAKES]: "takes"
+};
